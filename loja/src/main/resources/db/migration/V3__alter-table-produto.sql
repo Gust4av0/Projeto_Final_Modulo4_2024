@@ -1,0 +1,1 @@
+alter table item_produto add imagem varchar(255);

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header .barra-menu {
+    background: #5B342B;
+    text-align: center;
+    padding: 20px;
+}
+header .barra-menu a {
+    color: #FFFFFF;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.titulo {
+    text-align: center;
+    color:  #D9534F;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+.footer{
+    background: #5B342B;
+    text-align: center;
+    padding: 20px;
+    color: #FFFFFF;
+}
+.img-produtos {
+    width: 300px
+}
+main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.botao {
+    text-align: center;
+    background: #E27D60;
+    padding: 10px;
+    border-radius: 10px;
+}
+.container{
+    width: 1000px;
+    margin: auto;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap; /*Ele quebrar as colunas e cair para baixo*/
+    justify-content: center;/*Deixar os elementos dentro do flex centralizado*/
+}
+.flex-coluna {
+    width: 28%;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #CCC;
+    text-align: center;
+}
