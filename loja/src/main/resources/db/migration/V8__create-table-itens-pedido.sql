@@ -1,0 +1,11 @@
+--create table itens_pedido (
+--	item_pedido int primary key not null auto_increment,
+--	pedido_id int not null,
+--	produto_id int not null,
+--	categoria_id int not null,
+--	quantidade int not null,
+--	preco_unitario decimal(10 ,2) not null,
+--	total decimal(10, 2) gasenerated always  (quantidade * preco_unitario) stored,
+--	foreign key (pedido_id) references pedidos(pedido_id),
+--	foreign key (produto_id, categoria_id) references item_produto(produto_id, categoria_id)
+--)

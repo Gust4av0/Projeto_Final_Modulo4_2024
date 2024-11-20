@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/home")
 public class CategoriaController {
 
@@ -37,6 +37,30 @@ public class CategoriaController {
 
         this.categoriaRepositorio.save(categoria);
         return ResponseEntity.ok(categoria);
+    }
+
+    @DeleteMapping("/deletar-categoria/{id}")
+    public ResponseEntity<Void> deletarCategoria(@PathVariable Integer id) {
+        // Busca a categoria no repositório
+        Categoria categoria = this.categoriaRepositorio.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Categoria não encontrada"));
+
+        // Deleta a categoria encontrada
+        this.categoriaRepositorio.delete(categoria);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/atualizar-categoria/{id}")
+    public ResponseEntity<Categoria> atualizarCategoria (@PathVariable Integer id, @RequestBody Categoria categoriaAtualizada){
+        Categoria categoriaExistente = this.categoriaRepositorio.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Categoria não encontrada"));
+
+        categoriaExistente.setNome(categoriaAtualizada.getNome());
+        categoriaExistente.setDescricao(categoriaAtualizada.getDescricao());
+
+        Categoria categoriaSalva = this.categoriaRepositorio.save(categoriaExistente);
+        return ResponseEntity.ok(categoriaSalva);
     }
 
 }

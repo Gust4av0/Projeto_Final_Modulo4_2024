@@ -17,10 +17,6 @@ public class Produto {
     private Integer estoque;
     private String imagem;
 
-//    @ManyToOne
-//    @JoinColumn(name = "categoria_id", referencedColumnName = "id")
-//    private Categoria categoria;
-
     public Integer getProduto_id() {
         return produto_id;
     }
