@@ -1,8 +1,8 @@
 package com.mestredagrelha.loja.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "categoria")
@@ -11,6 +11,7 @@ public class Categoria {
     @Id
     private Integer categoria_id;
 
+    @Column
     private String nome;
     private String descricao;
 
@@ -37,4 +38,5 @@ public class Categoria {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
 }

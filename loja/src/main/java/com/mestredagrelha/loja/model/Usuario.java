@@ -1,12 +1,10 @@
 package com.mestredagrelha.loja.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -23,6 +21,10 @@ public class Usuario {
     private String telefone;
     @CreationTimestamp
     private LocalDateTime data_criacao;
+
+    //relacionamento 1 pra N - Um usuário pode ter vários pedidos
+    @OneToMany(mappedBy = "usuario")
+    private List<Pedidos> pedidos;
 
     public Integer getUsuario_id() {
         return usuario_id;

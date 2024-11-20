@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2024 às 14:59
+-- Tempo de geração: 20/11/2024 às 20:39
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,7 +45,9 @@ INSERT INTO `audit_preco_item` (`audit_id`, `produto_id`, `categoria_id`, `data_
 (1, 1, 1, '2024-11-20 13:53:19', 14.90, 35.00, 'Alteração no Preço do Produto'),
 (2, 1, 1, '2024-11-20 13:55:45', 35.00, 14.90, 'Alteração no Preço do Produto'),
 (3, 1, 1, '2024-11-20 13:57:59', 14.90, 35.00, 'Alteração no Preço do Produto'),
-(4, 1, 1, '2024-11-20 13:58:12', 35.00, 14.90, 'Alteração no Preço do Produto');
+(4, 1, 1, '2024-11-20 13:58:12', 35.00, 14.90, 'Alteração no Preço do Produto'),
+(5, 4, 2, '2024-11-20 18:47:46', 13.90, 40.00, 'Alteração no Preço do Produto'),
+(6, 4, 2, '2024-11-20 18:48:23', 40.00, 13.90, 'Alteração no Preço do Produto');
 
 -- --------------------------------------------------------
 
@@ -289,7 +291,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `audit_preco_item`
 --
 ALTER TABLE `audit_preco_item`
-  MODIFY `audit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `audit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `itens_pedido`

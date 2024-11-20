@@ -1,9 +1,6 @@
 package com.mestredagrelha.loja.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
@@ -15,8 +12,12 @@ public class Pedidos {
     @Id
     private Integer pedido_id;
 
+    //Muitos pedidos para 1 usuário
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
     @Column
-    private Integer usuario_id;
     private LocalDateTime data_pedido;
     private Integer valor_total;
 
@@ -26,14 +27,6 @@ public class Pedidos {
 
     public void setPedido_id(Integer pedido_id) {
         this.pedido_id = pedido_id;
-    }
-
-    public Integer getUsuario_id() {
-        return usuario_id;
-    }
-
-    public void setUsuario_id(Integer usuario_id) {
-        this.usuario_id = usuario_id;
     }
 
     public LocalDateTime getData_pedido() {
@@ -50,5 +43,13 @@ public class Pedidos {
 
     public void setValor_total(Integer valor_total) {
         this.valor_total = valor_total;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
