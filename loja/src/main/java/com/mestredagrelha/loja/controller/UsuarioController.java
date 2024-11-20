@@ -1,5 +1,7 @@
 package com.mestredagrelha.loja.controller;
 
+import com.mestredagrelha.loja.dto.ProdutoRequestDTO;
+import com.mestredagrelha.loja.dto.UsuarioRequestDTO;
 import com.mestredagrelha.loja.model.Produto;
 import com.mestredagrelha.loja.model.Usuario;
 import com.mestredagrelha.loja.repository.UsuarioRepository;
@@ -23,6 +25,7 @@ public class UsuarioController {
         List<Usuario> usuarios = this.usuarioRepository.findAll();
         return ResponseEntity.ok(usuarios);
     }
+
     @DeleteMapping("/deletar-usuario/{id}")
     public ResponseEntity<Void> deletarUsuario(@PathVariable Integer id){
         Usuario usuario = this.usuarioRepository.findById(id)

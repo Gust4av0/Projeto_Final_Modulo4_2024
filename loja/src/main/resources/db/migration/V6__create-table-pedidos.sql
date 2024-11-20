@@ -1,8 +1,0 @@
---create table pedidos (
---	pedido_id int primary key not null auto_increment,
---	usuario_id int not null,
---	data_pedido TIMESTAMP default CURRENT_TIMESTAMP,
---	status varchar(20) not null,
---	valor_total decimal(10,2) not null,
---	foreign key (usuario_id) references usuarios(usuario_id)
---)

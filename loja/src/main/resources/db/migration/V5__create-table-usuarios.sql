@@ -1,9 +1,0 @@
---create table usuarios (
---	usuario_id int primary key not null,
---	nome varchar(100),
---	email varchar(100) unique not null,
---	senha varchar(100) not null,
---	endereco varchar(255) not null,
---	telefone varchar(20) not null,
---	data_criacao TIMESTAMP default CURRENT_TIMESTAMP
---)
