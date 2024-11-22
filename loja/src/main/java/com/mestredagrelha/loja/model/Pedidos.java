@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 public class Pedidos {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer pedido_id;
 
     //Muitos pedidos para 1 usuário
@@ -52,4 +53,6 @@ public class Pedidos {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+
 }

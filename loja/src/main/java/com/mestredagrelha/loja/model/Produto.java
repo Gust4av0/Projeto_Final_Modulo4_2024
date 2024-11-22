@@ -13,7 +13,7 @@ public class Produto {
     @Column
     private String nome;
     private String descricao;
-    private Double preco;
+    private Integer preco;
     private Integer estoque;
     private String imagem;
 
@@ -49,11 +49,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Double getPreco() {
+    public Integer getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(Integer preco) {
         this.preco = preco;
     }
 
