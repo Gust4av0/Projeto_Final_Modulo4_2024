@@ -54,22 +54,22 @@ public class PedidoController {
 
             Pedidos pedidoSalvo = pedidosRepository.save(pedidos);
 
-            //serve para associar os itens ao pedido
-            for(Integer itemId : pedidoDTO.itemIds()){
-
-                Produto produto = produtoRepository.findById(itemId)
-                        .orElseThrow(() -> new IllegalArgumentException("Produto com ID" + itemId + "não encontrado"));
-
-                ItensPedido itensPedido = new ItensPedido();
-                itensPedido.setPedido_id(pedidoSalvo.getPedido_id());
-                itensPedido.setProduto_id(produto.getProduto_id());
-                itensPedido.setQuantidade(1);
-                itensPedido.setPreco_unitario(produto.getPreco());
-                itensPedido.setTotal(produto.getPreco());
-
-                itensPedidoRepository.save(itensPedido);
-
-            }
+//            //serve para associar os itens ao pedido
+//            for(Integer itemId : pedidoDTO.itemIds()){
+//
+//                Produto produto = produtoRepository.findById(itemId)
+//                        .orElseThrow(() -> new IllegalArgumentException("Produto com ID" + itemId + "não encontrado"));
+//
+//                ItensPedido itensPedido = new ItensPedido();
+//                itensPedido.setPedido_id(pedidoSalvo.getPedido_id());
+//                itensPedido.setProduto_id(produto.getProduto_id());
+//                itensPedido.setQuantidade(1);
+//                itensPedido.setPreco_unitario(produto.getPreco());
+//                itensPedido.setTotal(produto.getPreco());
+//
+//                itensPedidoRepository.save(itensPedido);
+//
+//            }
 
             return ResponseEntity.ok(pedidoSalvo);
         } catch (Exception e) {
